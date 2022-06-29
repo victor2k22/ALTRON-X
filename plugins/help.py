@@ -36,7 +36,7 @@ def help_(bot, message):
 ┗━━━━━━━━━━━━━━━━━┛
 """
     
-    message.reply_photo(
+    await message.reply_photo(
         photo="https://te.legra.ph/file/0957630b8248e79400247.jpg",
         caption=HELP_TXT
     )
