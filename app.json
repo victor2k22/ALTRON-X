@@ -1,0 +1,74 @@
+{
+    "name": "Hero Music",
+    "logo": "https://te.legra.ph/file/a4c16c60dd1c46bbe7385.jpg",
+    "description": "An Advanced Premium Music Bot For Telegram Groups VC.",
+    "keywords": ["music", "voice chat", "telegram"],
+    "stack": "container",
+    "env": {
+        "STRING_SESSION": {
+            "description": "pyrogram string session here",
+            "required": true
+        },
+        "STRING_SESSION1": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION2": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION3": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION4": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION5": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION6": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION7": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION8": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "STRING_SESSION9": {
+            "description": "pyrogram string session here",
+            "required": false
+        },
+        "OWNER": {
+            "description": "USERNAME OF OWNER",
+            "required": true,
+            "value": "@Shailendra34"
+        },            
+        "API_ID": {
+            "description": "telegram api id here",
+            "required": true
+        },
+        "SUDO_USERS": {
+            "description": "Who have Access Your Account But Rearly Plugins there",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "telegram api hash here",
+            "required": true
+        }
+    },
+    "buildpacks": [
+    {
+      "url": "heroku/python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    }
+  ]
+}

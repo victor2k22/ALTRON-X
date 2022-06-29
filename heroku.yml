@@ -1,0 +1,5 @@
+build:
+  docker:
+    hero: Dockerfile
+run:
+  hero: python3 -m modules
