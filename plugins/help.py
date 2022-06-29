@@ -1,6 +1,6 @@
 import asyncio
 from modules.helpers.command import commandpro
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.types import Message
 from config import SUDO_USERS
 
