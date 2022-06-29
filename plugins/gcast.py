@@ -5,7 +5,7 @@ from pyrogram.errors import UserAlreadyParticipant
 from modules.helpers.command import commandpro
 from config import SUDO_USERS
 
-@Client.on_message(commandpro(["/gcast", "/cast", "!gcast", "!cast"))
+@Client.on_message(commandpro(["/gcast", "/cast", "!gcast", "!cast"]))
 async def broadcast(_, message: Message):
     sent=0
     failed=0
