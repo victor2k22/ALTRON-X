@@ -1,8 +1,8 @@
 {
-    "name": "Hero Music",
-    "logo": "https://te.legra.ph/file/a4c16c60dd1c46bbe7385.jpg",
-    "description": "An Advanced Premium Music Bot For Telegram Groups VC.",
-    "keywords": ["music", "voice chat", "telegram"],
+    "name": "Altron X",
+    "logo": "https://te.legra.ph/file/0957630b8248e79400247.jpg",
+    "description": "ᴀɴ ᴀᴅᴠᴀɴᴄᴇ ᴍᴜsɪᴄ ᴀɴᴅ sᴘᴀᴍ ᴜsᴇʀʙᴏᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀʟᴛʀᴏɴ x.",
+    "keywords": ["Altron", "telegram"],
     "stack": "container",
     "env": {
         "STRING_SESSION": {
@@ -44,11 +44,6 @@
         "STRING_SESSION9": {
             "description": "pyrogram string session here",
             "required": false
-        },
-        "OWNER": {
-            "description": "USERNAME OF OWNER",
-            "required": true,
-            "value": "@Shailendra34"
         },            
         "API_ID": {
             "description": "telegram api id here",
