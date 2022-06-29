@@ -1,15 +1,15 @@
-from pyrogram import Client as bot, filters
+import asyncio
 from modules.helpers.command import commandpro
-from modules.helpers.decorators import errors, sudo_users_only
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from pyrogram import Client
+from pyrogram.types import Message
+from config import SUDO_USERS
 
-
-@bot.on_message(commandpro(["/help", "!help", ".help"]))
-@bot.on_message(commandpro(["/help", "!help", ".help"]) & filters.me)
-@errors
-@sudo_users_only
-def help_(bot, message):
-    HELP_TXT = """
+@Client.on_message(commandpro(["!help", "/help", ".help"]) & filters.me)
+@Client.on_message(commandpro(["!help", "/help", ".help"]) & filters.user(SUDO_USERS))
+async def start_(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://te.legra.ph/file/0957630b8248e79400247.jpg",
+        caption=f"""**
 ★<𝐀𝐋𝐓𝐑𝐎𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒>★
 
 ┏━━━━━━━━━━━━━━━━━┓ 
@@ -33,12 +33,6 @@ def help_(bot, message):
 ┣★!clean - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴊᴜɴᴋ ғɪʟᴇs
 ┣★!alive - ᴛᴏ ᴄʜᴇᴄᴋ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ
 ┣★!help - ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴍsɢ
-┗━━━━━━━━━━━━━━━━━┛
-"""
-    
-    await message.reply_photo(
-        photo="https://te.legra.ph/file/0957630b8248e79400247.jpg",
-        caption=HELP_TXT
-    )
+┗━━━━━━━━━━━━━━━━━┛**""")
 
-     
+
