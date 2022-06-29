@@ -8,6 +8,7 @@ ALIVE_PIC = "https://te.legra.ph/file/0957630b8248e79400247.jpg"
  
  
 @Client.on_message(filters.command(["alive", "awake"], [".", "/", "!"]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["alive", "awake"], [".", "/", "!"]) & filters.me)
 async def alive(Client, e: Message):
     ids = 0
     try:

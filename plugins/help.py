@@ -1,75 +1,44 @@
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from pyrogram import Client, filters
-from __main__ import *
- 
- 
-ALIVE_PIC = "https://te.legra.ph/file/0957630b8248e79400247.jpg"
-
- 
-@Client.on_message(filters.command(["help"], [".", "/", "!"]) & filters.me)
-async def alive(client: Client, e: Message):
-    ids = 0
-    try:
-        if client:
-            ids += 1
-        if client1:
-            ids += 1
-        if client2:
-            ids += 1
-        if client3:
-            ids += 1
-        if client4:
-            ids += 1
-        if client5:
-            ids += 1
-        if client6:
-            ids += 1
-        if client7:
-            ids += 1
-        if client8:
-            ids += 1
-        if client9:
-            ids += 1
-        Alive_msg = f"𝐀𝐥𝐭𝐫𝐨𝐧 𝐈𝐬 𝐎𝐧 𝐅𝐢𝐫𝐞 🔥 \n\n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
-        Alive_msg += f"► Vᴇʀsɪᴏɴ : `1.0` \n"
-        Alive_msg += f"► Pʏʀᴏ ᴠᴇʀsɪᴏɴ : `1.4.16` \n"
-        Alive_msg += f"► Aᴄᴛɪᴠᴇ IDs : `{ids}` \n"
-        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ.](t.me/TheAltron) \n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        await e.reply_photo(
-        photo=ALIVE_PIC,
-        caption=Alive_msg,
-        reply_markup=InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton(
-                        "• 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 •", url="https://t.me/Superior_Bots")
-                ], [
-                    InlineKeyboardButton(
-                        "• 𝐑𝐞𝐩𝐨 •", url="https://github.com/ITZ-ZAID/ZAID-USERBOT")
-                ]],
-        ),
-    ) 
-    except Exception as lol:         
-        Alive_msg = f"𝐀𝐥𝐭𝐫𝐨𝐧 𝐈𝐬 𝐎𝐧 𝐅𝐢𝐫𝐞 🔥 \n\n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
-        Alive_msg += f"► Vᴇʀsɪᴏɴ : `1.0` \n"
-        Alive_msg += f"► Pʏʀᴏ ᴠᴇʀsɪᴏɴ : `1.4.16` \n"
-        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ](t.me/TheAltron) \n"
-        Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
-        await e.reply_photo(
-        photo=ALIVE_PIC,
-        caption=Alive_msg,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("• 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 •", url="https://t.me/Superior_Bots"),
-                ],
-                [
-                    InlineKeyboardButton("• 𝐑𝐞𝐩𝐨 •", url="https://github.com/Itz-Zaid/Zaid-Userbot"),
-                ],
-            ],
-        ),
-    ) 
+from pyrogram import Client as bot, filters
+from modules.helpers.command import commandpro
+from modules.helpers.decorators import errors, sudo_users_only
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 
+@bot.on_message(commandpro(["/help", "!help", ".help"]))
+@bot.on_message(commandpro(["/help", "!help", ".help"]) & filters.me)
+@errors
+@sudo_users_only
+def help_(bot, message):
+    HELP_TXT = """
+★<𝐀𝐋𝐓𝐑𝐎𝐍 𝐂𝐎𝐌𝐌𝐀𝐍𝐃𝐒>★
+
+┏━━━━━━━━━━━━━━━━━┓ 
+┣★P - ᴜsᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴇɴᴊᴏʏ ᴍᴜsɪᴄ
+┣★E - ᴛᴏ ᴇɴᴅ sᴏɴɢ
+┣★!skip - ᴛᴏ sᴋɪᴘ sᴏɴɢ
+┣★!pause - ᴛᴏ ᴘᴀᴜsᴇ ʀᴜɴɴɪɴɢ sᴏɴɢ 
+┣★!resume - ᴛᴏ ʀᴇsᴜᴍᴇ ᴘᴀᴜsᴇᴅ sᴏɴɢ
+┣★!fspam - ғᴏʀ ғᴀsᴛ sᴘᴀᴍ
+┣★!spam - ғᴏʀ sᴘᴀᴍ
+┣★!delspam - ᴀғᴛᴇʀ sᴘᴀᴍ ᴍsɢ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ
+┣★!dspam - ғᴏʀ sʟᴏᴡ sᴘᴀᴍ
+┣★!sspam - ғᴏʀ sᴛɪᴄᴋᴇʀ sᴘᴀᴍ
+┣★!join [ɪɴᴠɪᴛᴇ ʟɪɴᴋ] - ᴛᴏ ᴊᴏɪɴ ᴘʀɪᴠᴀᴛᴇ ɢʀᴏᴜᴘ 
+┣★!join [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] - ᴛᴏ ᴊᴏɪɴ ᴘᴜʙʟɪᴄ ɢʀᴏᴜᴘ
+┣★!leave [ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ] - ғᴏʀ ʟᴇᴀᴠᴇ ɢʀᴏᴜᴘ
+┣★!leave [ɪɴᴠɪᴛᴇ ʟɪɴᴋ] - ғᴏʀ ʟᴇᴀᴠᴇ ɢʀᴏᴜᴘ
+┣★!inviteall- ᴛᴏ ᴀᴅᴅ ᴍᴇᴍʙᴇʀs ɪɴ ᴛʜᴀᴛ ɢʀᴏᴜᴘ ᴡʜᴇʀᴇ ᴛʜᴇ ᴄᴍᴅ ɪs ᴇxᴇᴄᴜᴛᴇᴅ
+┣★!raid [QUANTITY] - ᴛᴏ ʀᴀɪᴅ ᴏɴ ʀᴇᴘʟɪᴇᴅ ᴜsᴇʀ
+┣★!dmraid [QUANTITY] - ᴛᴏ ʀᴀɪᴅ ᴏɴ ʀᴇᴘʟɪᴇᴅ ᴜsᴇʀ ɪɴ ᴅᴍ        
+┣★!clean - ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴊᴜɴᴋ ғɪʟᴇs
+┣★!alive - ᴛᴏ ᴄʜᴇᴄᴋ ʙᴏᴛ ɪs ᴀʟɪᴠᴇ ᴏʀ ᴅᴇᴀᴅ
+┣★!help - ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴍsɢ
+┗━━━━━━━━━━━━━━━━━┛
+"""
+    
+    message.reply_photo(
+        photo="https://te.legra.ph/file/0957630b8248e79400247.jpg",
+        caption=HELP_TXT
+    )
+
+     

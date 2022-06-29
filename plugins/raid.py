@@ -9,9 +9,8 @@ from modules.data import *
 from config import *
 
 
-Usage = f"**❌ Wrong Usage ❌** \n Type: `.help dmspam`"
-
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], [".", "/", "!"]))
+@Client.on_message(filters.me & filters.command(["raid"], [".", "/", "!"]))
 async def dmraid(xspam: Client, e: Message):
       """ Module: Raid """
       TheAltronX = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)

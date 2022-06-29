@@ -6,6 +6,7 @@ from config import SUDO_USERS as SUDO_USER
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["delspam", "deletespam"], [".", "!", "/"]))
+@Client.on_message(filters.me & filters.command(["delspam", "deletespam"], [".", "!", "/"]))
 async def delspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n .delspam 10 Umm")
     quantity = message.command[1]
@@ -21,6 +22,7 @@ async def delspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["spam", "spamming"], [".", "!", "/"]))
+@Client.on_message(filters.me & filters.command(["spam", "spamming"], [".", "!", "/"]))
 async def suspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n .spam 10 Umm")
     quantity = message.command[1]
@@ -42,6 +44,7 @@ async def suspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["fastspam", "fspam"], [".", "!", "/"]))
+@Client.on_message(filters.me & filters.command(["fastspam", "fspam"], [".", "!", "/"]))
 async def spspam(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n .fastspam 10 Umm")
     quantity = message.command[1]
@@ -64,6 +67,7 @@ async def spspam(client: Client, message: Message):
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["slowspam", "dspam", "delayspam"], [".", "!", "/"]))
+@Client.on_message(filters.me & filters.command(["slowspam", "dspam", "delayspam"], [".", "!", "/"]))
 async def sperm(client: Client, message: Message):
     hero = await message.reply_text("⚡ Usage:\n .slowspam 10 Umm")
     quantity = message.command[1]
@@ -90,6 +94,7 @@ async def sperm(client: Client, message: Message):
 
 
 @Client.on_message(filters.user(SUDO_USER) & filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], [".", "!", "/"]))
+@Client.on_message(filters.me & filters.command(["sspam", "stkspam", "spamstk", "stickerspam"], [".", "!", "/"]))
 async def pussy(client: Client, message: Message):
     if not message.reply_to_message:
         await message.edit_text("**reply to a sticker with amount you want to spam**")
@@ -120,6 +125,7 @@ async def pussy(client: Client, message: Message):
 
 
 @Client.on_message(filters.command('join', [".", "!", "/"]) & filters.user(SUDO_USER))
+@Client.on_message(filters.command('join', [".", "!", "/"]) & filters.me)
 async def fuck(client: Client, message: Message):
     hero = message.text[6:]
     count = 0
@@ -135,6 +141,7 @@ async def fuck(client: Client, message: Message):
 
 
 @Client.on_message(filters.command('leave', [".", "!", "/"]) & filters.user(SUDO_USER))
+@Client.on_message(filters.command('leave', [".", "!", "/"]) & filters.me)
 async def leftfuck(client: Client, message: Message):
     hero = message.text[6:]
     count = 0
