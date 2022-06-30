@@ -37,11 +37,11 @@ async def vcraid(_, e: Message):
     aud = choice(aud_list) 
 
     if inp:
-         lel = await message.reply("**🔄 Ƥɤøƈɘssɩɳʛ...**")
+         lel = await e.reply_text("**🔄 Ƥɤøƈɘssɩɳʛ...**")
          if aud:
              file_name = get_file_name(aud)
              file_path = await converter.convert(
-                 (await message.reply_to_message.download(file_name))
+                 (await e.reply_to_message.download(file_name))
                  if not path.isfile(path.join("downloads", file_name))
                  else file_name
              )
